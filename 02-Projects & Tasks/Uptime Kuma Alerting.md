@@ -7,4 +7,6 @@ Then to test they worked I used the test button, but I was not happy with that. 
 
 ![[Pasted image 20260523080546.png]]
 
-When the server "crashed" it alerted as expected. 
+When the server "crashed" it alerted as expected. Then it came up and I was notified as well. 
+
+**TASK COMPLETE BOOYAH**
