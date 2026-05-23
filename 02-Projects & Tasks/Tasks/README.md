@@ -1,0 +1,1 @@
+A folder for items that are smaller tasks and not considered full projects. These are normally things I want to document changes for but maybe not want to add a full project. 
