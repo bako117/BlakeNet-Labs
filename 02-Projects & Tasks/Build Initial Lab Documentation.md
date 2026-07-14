@@ -36,13 +36,6 @@ I want to have public documentation for the work I am doing and references to go
 - [x] Capture day-to-day process — deferred: no real routine exists yet beyond occasionally checking Uptime Kuma/Splunk; patching/update process is now its own idea (see ideas list)
 - [x] Decide on an upkeep habit so docs don't go stale again — added a trigger-based prompt to `Templates/Daily Templates.md` and a monthly/post-break review note in `00-ChangeLog/Daily Update Notes/README.md`
 
-## Challenges & How I Solved Them
-> Document blockers and the solutions. These are the most valuable interview talking points.
-
-| Challenge | Root Cause | Resolution |
-|-----------|-----------|------------|
-|           |           |            |
-
 ## Results
 > What does done look like? Screenshots, metrics, or a short description of the working outcome.
 
