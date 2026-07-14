@@ -23,6 +23,7 @@ tags: [daily-note]
 - **Host/Service:**
 - **Change:**
 - **Reason:**
+- [ ] Does this change need to be reflected in a runbook or infra doc? Update it now.
 
 ## Issues Encountered
 > Problems hit today and how they were resolved (or left open).
