@@ -10,4 +10,8 @@ Open security logs, filter for event codes 4625 to spot the password spray, then
 5
 v.hunter
 
+9 - Event logs RDP type 10
+10 - Registry for users
+11 - SevenZip registry read - arkproj.zip
+
 
