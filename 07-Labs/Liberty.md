@@ -13,6 +13,7 @@ v.hunter
 9 - Event logs RDP type 10
 10 - Registry for users
 11 - SevenZip registry read - arkproj.zip
-
+12
+13
 14 -regixsstry for users - User with no comment added, initiall
 
