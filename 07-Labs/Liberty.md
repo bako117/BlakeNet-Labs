@@ -6,3 +6,8 @@ One day, a system administrator discovered a shared folder configured with “Fu
 You have been tasked with investigating evidence collected from the affected endpoint to determine what occurred. Threat Intelligence has previously identified that an employee’s credentials were harvested by a RedLine Stealer, which is suspected to have been used for initial access to this system.
 
 Open security logs, filter for event codes 4625 to spot the password spray, then go by 4624s to find the successful account. 
+
+5
+v.hunter
+
+
