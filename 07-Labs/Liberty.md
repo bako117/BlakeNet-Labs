@@ -16,6 +16,8 @@ v.hunter
 12
 13
 14 -regixsstry for users - User with no comment added, initiall
+15 -C:\Users\bako\Desktop\Liberty\Users\k.texus\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
+
 
 File Size
 13857+
