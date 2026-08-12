@@ -13,10 +13,11 @@ v.hunter
 9 - Event logs RDP type 10
 10 - Registry for users
 11 - SevenZip registry read - arkproj.zip
-12
-13
+12 - mafs it up after using mftcmd
+13 - 
 14 -regixsstry for users - User with no comment added, initiall
-15 -C:\Users\bako\Desktop\Liberty\Users\k.texus\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
+15 - "C:\Users\bako\Desktop\Liberty\Users\k.texus\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
+16 - 
 
 
 File Size
