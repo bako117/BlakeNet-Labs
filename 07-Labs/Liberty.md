@@ -1,4 +1,5 @@
 
+
 Liberty launched a massive project with a budget exceeding $100 million, with the goal of granting true freedom to humanity.
 
 One day, a system administrator discovered a shared folder configured with “Full Control” permissions granted to “Everyone”, raising concerns about a potential security incident.
