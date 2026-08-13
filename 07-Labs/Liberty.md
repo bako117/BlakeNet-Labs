@@ -41,16 +41,21 @@ File Size
 
 The fictional enterprise Liberty had a $100M+ project promising humanity “true freedom.” But a single misconfiguration in its file shares opened the door to an attack chain that progressed from RedLine Stealer credential theft, to a phishing page capturing a Net-NTLM hash, to RDP access and, ultimately, a persistent backdoor. Across 20 questions in this retired Hack The Box blue-team capture-the-flag challenge, I reconstructed the attack using the provided Windows triage image and my blue team toolset.
 
-To complete this challenge, I worked completely in my **FLARE-VM**, Mandiant’s Windows-based security distribution. While FLARE-VM is primarily designed for malware analysis and reverse engineering, I’ve found it to be an excellent all-purpose blue-team and DFIR environment thanks to the extensive collection of security tools that come preinstalled. If you haven’t used it before, I highly recommend checking out the project [here](https://github.com/mandiant/flare-vm).
+To complete this challenge, I worked entirely in my **FLARE-VM**, Mandiant’s Windows-based security distribution. While FLARE-VM is primarily designed for malware analysis and reverse engineering, I’ve found it to be an excellent all-purpose blue-team and DFIR environment thanks to the extensive collection of security tools that come preinstalled. If you haven’t used it before, I highly recommend checking out the project [here](https://github.com/mandiant/flare-vm).
 
-Additionally tools I used throughout this investigation were:
+Additional tools I used were:
 
 - [**KAPE**](https://www.kroll.com/en/services/cyber/reactive-services/kroll-artifact-parser-and-extractor-kape) -  for collecting and working with forensic artifacts from the Windows triage image.
 - [**Eric Zimmerman’s Tools**](https://ericzimmerman.github.io/) - for parsing and analyzing Windows forensic artifacts such as the MFT, registry data, event logs, and other evidence collected during the investigation.
-- [**Event Log Expert**](https://github.com/microsoft/Eventlogexpert) - I have yet to meet someone who is a fan of Window's event viewer....This tool is easier and faster to use than the native installed event viewer. 
+- [**Event Log Expert**](https://github.com/microsoft/Eventlogexpert) - I have yet to meet someone who is a fan of Window's event viewer....This tool is easier and faster to use than the native installed windows event viewer. 
 
 Now that the stage is set, it's time to dive into the challenge. 
 
 Q1: You suspect that a threat actor might conduct password spraying attack on this server, How many failed logon attempts identified before successfully identifying the correct pair of the credential?
 
-To find this flag, I used event log expert to open up the image's Security logs. 
+Answer: 5
+
+To investigate, I opened the triage image’s Security event logs in Event Log Expert and filtered for **Event ID 4625**, which records failed Windows logon attempts. I identified five failed logons originating from the same source in rapid succession and targeting different accounts before a successful authentication occurred. This pattern is consistent with password-spraying activity.
+
+![[Pasted image 20260812203640.png]]
+
