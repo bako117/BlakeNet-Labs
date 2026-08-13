@@ -53,9 +53,21 @@ Now that the stage is set, it's time to dive into the challenge.
 
 Q1: You suspect that a threat actor might conduct password spraying attack on this server, How many failed logon attempts identified before successfully identifying the correct pair of the credential?
 
-Answer: 5
+Answer: `5`
 
 To investigate, I opened the triage image’s Security event logs in Event Log Expert and filtered for **Event ID 4625**, which records failed Windows logon attempts. I identified five failed logons originating from the same source in rapid succession and targeting different accounts before a successful authentication occurred. This pattern is consistent with password-spraying activity.
 
 ![[Pasted image 20260812203640.png]]
+
+Q2: What is the user that was identified by the threat actor?
+
+Answer: `v.hunter`
+
+Expanding the previous filter to include successful Windows logons (**Event ID 4624**), I identified a successful authentication for the `v.hunter` account originating from the same suspicious source associated with password spray. 
+
+![[Pasted image 20260812204441.png]]
+
+Q3: There is a shared folder that can be accessed by all users, what is the name of this shared folder?
+
+Answer: `Proposal`
 
