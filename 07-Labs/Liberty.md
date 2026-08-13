@@ -36,3 +36,15 @@ File Size
 16395+
 255143+5380+
 286347
+
+
+
+The fictional enterprise Liberty had a $100M+ project promising humanity “true freedom.” But a single misconfiguration in its file shares opened the door to an attack chain that progressed from RedLine Stealer credential theft, to a phishing page capturing a Net-NTLM hash, to RDP access and, ultimately, a persistent backdoor. Across 20 questions in this retired Hack The Box blue-team capture-the-flag challenge, I reconstructed the attack using the provided Windows triage image and my blue team toolset.
+
+To complete this challenge, I primarily worked from **FLARE-VM**, Mandiant’s Windows-based security distribution. While FLARE-VM is primarily designed for malware analysis and reverse engineering, I’ve found it to be an excellent all-purpose blue-team and DFIR environment thanks to the extensive collection of security tools that come preinstalled. If you haven’t used it before, I highly recommend checking out the project [here](https://github.com/mandiant/flare-vm).
+
+Additionally tools I used throughout this investigation were:
+
+- **KAPE** — for collecting and working with forensic artifacts from the Windows triage image.
+- **Eric Zimmerman’s Tools** — for parsing and analyzing Windows forensic artifacts such as the MFT, registry data, event logs, and other evidence collected during the investigation.
+- 
