@@ -180,6 +180,12 @@ Answer: `2025-06-11 14:55:40`
 
 Answer: `ProjectArk`
 
-For the final answer, I looked back at the network share list from question 3. There is only one other user created share and I chose that as the answer. 
+Back to the network share list from Q3. Alongside `Proposal`, `LanmanServer\Shares` contains an entry named `ProjectArk` pointing at `C:\ProjectArk`.  The same folder the attacker browsed via Shellbags in Q10 and archived in Q11. Process of elimination alone could get us to this share, but rather than rely on that, I checked the last-written timestamp on the key and confirmed it fell within the attacker's window. This gives me higher confidence in the answer.
 
 # Wrapping Up
+
+This challenge tied together nearly every major artifact category in Windows forensics. I used registry hives, the `$MFT`, browser history, Shellbags, PowerShell history, and Windows Event Logs to reconstruct a full attack timeline. What started as a single suspicious network share in the registry unraveled into a much larger story: a threat actor phishing for NTLM hashes via a malicious `.url` file, pivoting into RDP access as `k.texus`, staging data in `C:\ProjectArk`, and ultimately installing PowerShell Web Access and a new user account as a persistent backdoor.
+
+The biggest takeaway from this box is that no single artifact tells the whole story. Cross-referencing timestamps across the registry, `$MFT`, and event logs was what turned a series of isolated answers into a coherent narrative of the intrusion.
+
+Thanks for tuning into my first technical blog post! If you have any feedback for me, please don't hesitate to reach out, I'd love to hear your thoughts. My next post won't be another walkthrough, but rather a look at some AI work I've been experimenting with in my lab! 
