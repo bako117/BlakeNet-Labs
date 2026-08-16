@@ -75,7 +75,7 @@ The answer is located within the registry. I used KAPE along with EZParser modul
 
 I made a note here as well, because the share's description says any file uploaded will be reviewed by user Texus. This could be very concerning if abused.
 
-To answer the next 4 questions, 
+To answer the next four questions, I used `MFT Explorer` by Eric Zimmerman to open the `$MFT` file on the given image. This lets us view information about files on the device in a database format. If a file is small enough, it's actually stored within the `$MFT` file itself.
 
 Q4: The threat actor uploaded several files to the previously identified shared folder. One of these files can be used to capture the hash of a user who opens it. What is the name of that file? 
 
