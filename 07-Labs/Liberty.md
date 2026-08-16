@@ -141,10 +141,15 @@ Q12: What is the total bytes of all files on that folder which were compressed i
 
 Answer: `783907`
 
-For this question I went back the the `$MFT`. First, I used the `MFTECmd` to parse the entire table. Here is the command I ran: 
+For this question I went back the the `$MFT`. First, I used the `MFTECmd` to parse the entire database. Here is the command I ran + a generalized command to show exactly what I'm doing: 
 
 ```
+> "RawTools\MFTECmd\MFTECmd.exe" -f "Liberty\$MFT" --csv "C:\Users\bako\Desktop" --csvf mft_output.csv
+
+> Path\To\MFTECmd.exe -f \Path\To\$MFT --csv "Path\To\OutputFolder" --csvf output.csv
 ```
+
+I opened the output file using `Timeline Explorer` and found every entry with a Parent Path equal to `.\Project Ark` . 
 
 Q13: The threat actor uploaded the previously identified file to C2 website, What is the domain of this website? 
 
