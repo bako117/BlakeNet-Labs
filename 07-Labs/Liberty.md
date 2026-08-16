@@ -107,9 +107,13 @@ Q8: What is the full name of the second compromised user?
 
 Answer: `Kuneo Texus`
 
+Going back to the security logs used for questions 1 and 2, I searched for a successful logon *and* a `Logon Type` equal to 10. This specific type of success is indicative of an RDP logon. 
+
 Q9: When was the time that the threat actor connected to the server via RDP in UTC? 
 
 Answer: `2025-06-11 14:44:48`
+
+Using the log identified in question 9, the answer is located within a field in the event called 
 
 Q10: The threat actor discovered a folder that stores files about the project, What is the full path of this folder? Answer: `C:\ProjectArk`
 
