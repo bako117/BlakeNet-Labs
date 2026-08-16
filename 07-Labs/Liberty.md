@@ -101,11 +101,15 @@ Q7: What is the format of the hash that the threat actor captured via this metho
 
 Answer: `Net-NTLMv2`
 
+When the victim's system authenticates to the attacker's SMB share, it doesn't send the raw NTLM hash it completes a challenge-response handshake instead. This response is what gets captured, that default exchange format is `Net-NTLMv2`.
 
+Q8: What is the full name of the second compromised user? 
 
-Q8: What is the full name of the second compromised user? Answer: `Kuneo Texus`
+Answer: `Kuneo Texus`
 
-Q9: When was the time that the threat actor connected to the server via RDP in UTC? Answer: `2025-06-11 14:44:48`
+Q9: When was the time that the threat actor connected to the server via RDP in UTC? 
+
+Answer: `2025-06-11 14:44:48`
 
 Q10: The threat actor discovered a folder that stores files about the project, What is the full path of this folder? Answer: `C:\ProjectArk`
 
