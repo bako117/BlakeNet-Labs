@@ -75,6 +75,8 @@ The answer is located within the registry. I used KAPE along with EZParser modul
 
 I made a note here as well, because the share's description says any file uploaded will be reviewed by user Texus. This could be very concerning if abused.
 
+
+
 To answer the next four questions, I used `MFT Explorer` by Eric Zimmerman to open the `$MFT` file on the given image. This lets us view information about files on the device in a database format. If a file is small enough, it's actually stored within the `$MFT` file itself.
 
 Q4: The threat actor uploaded several files to the previously identified shared folder. One of these files can be used to capture the hash of a user who opens it. What is the name of that file? 
@@ -107,17 +109,29 @@ Q8: What is the full name of the second compromised user?
 
 Answer: `Kuneo Texus`
 
-Going back to the security logs used for questions 1 and 2, I searched for a successful logon *and* a `Logon Type` equal to 10. This specific type of success is indicative of an RDP logon. 
+Going back to the security logs used for questions 1 and 2, I was curious whether there were any other logons from the suspicious IP. I noticed RDP logons from that IP under the user `k.texus`. Using the registry parsing output from KAPE, I viewed the user data in the registry, which revealed the final answer.
+
+
 
 Q9: When was the time that the threat actor connected to the server via RDP in UTC? 
 
 Answer: `2025-06-11 14:44:48`
 
-Using the log identified in question 9, the answer is located within a field in the event called 
+I searched for a a `Logon Type` equal to 10 within the security logs. This specific type of success is indicative of an RDP logon. Within the event XML, there is a field called TimeCreated SystemTime that was the answer. 
 
-Q10: The threat actor discovered a folder that stores files about the project, What is the full path of this folder? Answer: `C:\ProjectArk`
+![[Pasted image 20260816084833.png]]
 
-Q11: The threat actor created an archive file containing all files of the previously identified folder, What is the name of this archive file? Answer: `arkproj.zip`
+Q10: The threat actor discovered a folder that stores files about the project, What is the full path of this folder? 
+
+Answer: `C:\ProjectArk`
+
+I discovered this folder previously while searching through the `$MFT` and submitted it as the answer. Another more technical way this could've been done is 
+
+Q11: The threat actor created an archive file containing all files of the previously identified folder, What is the name of this archive file? 
+
+Answer: `arkproj.zip`
+
+
 
 Q12: What is the total bytes of all files on that folder which were compressed into previously identified archive file? (not including Zone Identifier) Answer: `783907`
 
