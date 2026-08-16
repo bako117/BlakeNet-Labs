@@ -157,14 +157,19 @@ Q13: The threat actor uploaded the previously identified file to C2 website, Wha
 
 Answer: `yourc2filemanager.cn`
 
-To find this answer, I utilized browser forensics. I opened the `History` database file located at:
-`\Liberty\Users\k.texus\AppData\Local\Microsoft\Edge\User Data\Default\History`
+To find this answer, I used browser forensics. I opened the `History` database file located at: `\Liberty\Users\k.texus\AppData\Local\Microsoft\Edge\User Data\Default\History`
 
-I use `DB Browser for SQLite` but anything that can browse `SQLite` databases will help you find this answer. Within this database, I looked at a table called `urls` and noticed a suspicious `.cn` URL that is appeared to be used for uploading a file, this domain was the answer.
+I used `DB Browser for SQLite`, but anything that can browse SQLite databases will work. Within this database, I looked at the `urls` table and noticed a suspicious `.cn` URL that appeared to be used for uploading a file, this domain was the answer.
+
+![[Pasted image 20260816094000.png]]
 
 Q14: While reviewing users on this server, you found a suspicious user on this server, What is the name of this user? 
 
 Answer: `t.minami`
+
+While reviewing the Windows user data located in the registry, this user stood out to me because they had no additional commented information about who they are or what they do. Additionally, they are an admin with RDP rights and have a username that looks incredibly familiar to a user already on the device. 
+
+![[Pasted image 20260816094346.png]]
 
 Q15: The threat actor installed a web-based gateway as a backdoor to the server. What is the full command used to install this feature? 
 
