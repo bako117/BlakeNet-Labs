@@ -141,7 +141,10 @@ Q12: What is the total bytes of all files on that folder which were compressed i
 
 Answer: `783907`
 
-For this question I went back the the `$MFT`. First, I used the GUI tool `MFT Explorer` to find the file entry names 
+For this question I went back the the `$MFT`. First, I used the `MFTECmd` to parse the entire table. Here is the command I ran: 
+
+```
+```
 
 Q13: The threat actor uploaded the previously identified file to C2 website, What is the domain of this website? 
 
