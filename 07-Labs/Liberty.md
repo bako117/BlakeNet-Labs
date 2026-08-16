@@ -181,15 +181,36 @@ Located at `C:\Users\bako\Desktop\Liberty\Users\k.texus\AppData\Roaming\Microsof
 
 Q16: Which protocol has to be enabled to use this feature? Answer: `WinRM`
 
-I found this answer with a bit of online research and by looking at the command history shown above. The next three question's answers I fou
+I found this answer with a bit of online research and by looking at the command history shown above. The next three questions' answers were found back in the Windows Event Logs, specifically within `Liberty\Windows\System32\winevt\logs\Microsoft-Windows-PowerShellWebAccess%4Operational.evtx`.
 
 Q17: Provide the UTC timestamp when the threat actor confirmed successful backdoor access through the previously identified user account. 
 
 Answer: `2025-06-11 14:54:55`
 
-Q18: What is the Session ID of this connection? Answer: `LIBERYSV08\t.minami.250611.075455`
+These logs were incredibly short so it was easy to identify the session created event. From here, I used the system creation time within the event XML.
 
-Q19: Provide the UTC timestamp When was this session terminated by the threat actor Answer: `2025-06-11 14:55:40`
+![[Pasted image 20260816100623.png]]
 
-Q20: What is the name of shared folder that was created by the threat actor during the invasion? Answer: `ProjectArk`
+Q18: What is the Session ID of this connection? 
 
+Answer: `LIBERYSV08\t.minami.250611.075455`
+
+Within the same event as question 17, the session ID is also within the event XML.
+
+![[Pasted image 20260816100658.png]]
+
+Q19: Provide the UTC timestamp When was this session terminated by the threat actor 
+
+Answer: `2025-06-11 14:55:40`
+
+2 events up, there is a signoff event for the attacker's session. I used the system creation time once again within the XML.
+
+![[Pasted image 20260816100844.png]]
+
+Q20: What is the name of shared folder that was created by the threat actor during the invasion? 
+
+Answer: `ProjectArk`
+
+
+
+[CONCLUSION]
