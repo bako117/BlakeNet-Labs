@@ -133,9 +133,15 @@ Q11: The threat actor created an archive file containing all files of the previo
 
 Answer: `arkproj.zip`
 
-The answer to t
+The answer to this was found within the seven zip registry data for `k.texus`. 
 
-Q12: What is the total bytes of all files on that folder which were compressed into previously identified archive file? (not including Zone Identifier) Answer: `783907`
+![[Pasted image 20260816090026.png]]
+
+Q12: What is the total bytes of all files on that folder which were compressed into previously identified archive file? (not including Zone Identifier) 
+
+Answer: `783907`
+
+For this question I went back the the `$MFT`. First, I used the GUI tool `MFT Explorer` to find the file entry names 
 
 Q13: The threat actor uploaded the previously identified file to C2 website, What is the domain of this website? 
 
