@@ -75,7 +75,7 @@ The answer is located within the registry. I used KAPE along with EZParser modul
 
 I made a note here as well, because the share's description says any file uploaded will be reviewed by user Texus. This could be very concerning if abused.
 
-
+![[Pasted image 20260816084956.png]]
 
 To answer the next four questions, I used `MFT Explorer` by Eric Zimmerman to open the `$MFT` file on the given image. This lets us view information about files on the device in a database format. If a file is small enough, it's actually stored within the `$MFT` file itself.
 
@@ -109,9 +109,9 @@ Q8: What is the full name of the second compromised user?
 
 Answer: `Kuneo Texus`
 
-Going back to the security logs used for questions 1 and 2, I was curious whether there were any other logons from the suspicious IP. I noticed RDP logons from that IP under the user `k.texus`. Using the registry parsing output from KAPE, I viewed the user data in the registry, which revealed the final answer.
+Going back to the security logs used for questions 1 and 2, I was curious whether there were any other logons from the suspicious IP. I noticed RDP logons from that IP under the user `k.texus`. Using the registry parsing output from KAPE, I viewed the Windows user account data in the registry, which revealed the final answer.
 
-
+![[Pasted image 20260816085215.png]]
 
 Q9: When was the time that the threat actor connected to the server via RDP in UTC? 
 
@@ -125,13 +125,15 @@ Q10: The threat actor discovered a folder that stores files about the project, W
 
 Answer: `C:\ProjectArk`
 
-I discovered this folder previously while searching through the `$MFT` and submitted it as the answer. Another more technical way this could've been done is 
+I discovered this folder previously while searching through the `$MFT` and submitted it as the answer. Another, more technical way this could've been done is by examining **Shellbags**, which track folders a user has browsed via Explorer, even after the folder itself has been deleted. `k.texus`'s `UsrClass.dat` reveals that he last interacted with the folder around the same time as the RDP logon, tying the access directly to the attacker's session
+
+![[Pasted image 20260816085729.png]]
 
 Q11: The threat actor created an archive file containing all files of the previously identified folder, What is the name of this archive file? 
 
 Answer: `arkproj.zip`
 
-
+The answer to t
 
 Q12: What is the total bytes of all files on that folder which were compressed into previously identified archive file? (not including Zone Identifier) Answer: `783907`
 
