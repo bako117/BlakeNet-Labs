@@ -175,9 +175,17 @@ Q15: The threat actor installed a web-based gateway as a backdoor to the server.
 
 Answer: `Install-WindowsFeature -Name WindowsPowerShellWebAccess -IncludeManagementTools`
 
+Located at `C:\Users\bako\Desktop\Liberty\Users\k.texus\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\` is a file named `ConsolHost_history.txt` . This file logs everything the attacker typed into PowerShell, giving us the answer. I also observed the attacker adding the previously found user to the device and granting them RDP permissions. 
+
+![[Pasted image 20260816095638.png]]
+
 Q16: Which protocol has to be enabled to use this feature? Answer: `WinRM`
 
-Q17: Provide the UTC timestamp when the threat actor confirmed successful backdoor access through the previously identified user account. Answer: `2025-06-11 14:54:55`
+I found this answer with a bit of online research and by looking at the command history shown above. The next three question's answers I fou
+
+Q17: Provide the UTC timestamp when the threat actor confirmed successful backdoor access through the previously identified user account. 
+
+Answer: `2025-06-11 14:54:55`
 
 Q18: What is the Session ID of this connection? Answer: `LIBERYSV08\t.minami.250611.075455`
 
