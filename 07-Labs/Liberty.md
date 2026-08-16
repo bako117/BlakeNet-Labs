@@ -141,7 +141,7 @@ Q12: What is the total bytes of all files on that folder which were compressed i
 
 Answer: `783907`
 
-For this question I went back the the `$MFT`. First, I used the `MFTECmd` to parse the entire database. Here is the command I ran + a generalized command to show exactly what I'm doing: 
+For this question I went back to the `$MFT`. First, I used `MFTECmd` to parse the entire database. Here is the command I ran, plus a generalized version to show exactly what I'm doing:
 
 ```
 > "RawTools\MFTECmd\MFTECmd.exe" -f "Liberty\$MFT" --csv "C:\Users\bako\Desktop" --csvf mft_output.csv
@@ -149,11 +149,18 @@ For this question I went back the the `$MFT`. First, I used the `MFTECmd` to par
 > Path\To\MFTECmd.exe -f \Path\To\$MFT --csv "Path\To\OutputFolder" --csvf output.csv
 ```
 
-I opened the output file using `Timeline Explorer` and found every entry with a Parent Path equal to `.\Project Ark` . 
+I opened the output file in `Timeline Explorer` and filtered for every entry with a Parent Path equal to `.\Project Ark`. From here, I added up all the file sizes, excluding the Zone.Identifier for the PNG. That's just a marker indicating the file originated from the web, not actual file content. This led me to the answer of `783907`.
+
+![[Pasted image 20260816093037.png]]
 
 Q13: The threat actor uploaded the previously identified file to C2 website, What is the domain of this website? 
 
 Answer: `yourc2filemanager.cn`
+
+To find this answer, I utilized browser forensics. I opened the `History` database file located at:
+`\Liberty\Users\k.texus\AppData\Local\Microsoft\Edge\User Data\Default\History`
+
+I use `DB Browser for SQLite` but anything that can browse `SQLite` databases will help you find this answer. Within this database, I looked at a table called `urls` and noticed a suspicious `.cn` URL that is appeared to be used for uploading a file, this domain was the answer.
 
 Q14: While reviewing users on this server, you found a suspicious user on this server, What is the name of this user? 
 
