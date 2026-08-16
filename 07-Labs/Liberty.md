@@ -71,6 +71,9 @@ Q3: There is a shared folder that can be accessed by all users, what is the name
 
 Answer: `Proposal`
 
+The answer is located within the registry. I utilized KAPE and EZparser modules paired with the given triage image to generate easily digestible artifacts. I was able to identify registry entries for Network shares located at: 
+`ROOT\ControlSet001\Services\LanmanServer\Shares` . Here we see a folder with 
+
 Q4: The threat actor uploaded several files to the previously identified shared folder. One of these files can be used to capture the hash of a user who opens it. What is the name of that file? 
 
 Answer: `Proposal.url`
