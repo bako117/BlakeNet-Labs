@@ -81,13 +81,27 @@ Q4: The threat actor uploaded several files to the previously identified shared 
 
 Answer: `Proposal.url`
 
+After navigating to the shared folder in `MFT Explorer` , I immediately noticed a file with a suspicious extension. `Proposal.url` . `.url` files are shortcuts that can be weaponized to initiate NTLM authentication just by being viewed in Explorer, leaking the user's hash to an attacker-controlled listener.
+
 Q5: What is the full URL used by threat actor to mimic the fake proposal of the project?
 
 Answer: `http://argonaut.ark/proposal.html`
 
-Q6: What is the full UNC path of the network share that the threat actor used to capture hash of the victim? Answer: `\\192.168.189.129\%USERNAME%.icon`
+The file itself is actually small enough that it is within the MFT. While viewing it's contents you can see the URL set up for the shortcut file. 
 
-Q7: What is the format of the hash that the threat actor captured via this method? Answer: `Net-NTLMv2`
+![[Pasted image 20260816000237.png]]
+
+Q6: What is the full UNC path of the network share that the threat actor used to capture hash of the victim? 
+
+Answer: `\\192.168.189.129\%USERNAME%.icon`
+
+Within the same place you can view the URL, you can also see the share the attacker is convincing the victim to attempt to authenticate to. Thus giving over their password hash that can be used against them. 
+
+Q7: What is the format of the hash that the threat actor captured via this method? 
+
+Answer: `Net-NTLMv2`
+
+
 
 Q8: What is the full name of the second compromised user? Answer: `Kuneo Texus`
 
