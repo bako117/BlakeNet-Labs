@@ -37,7 +37,7 @@ File Size
 255143+5380+
 286347
 
-
+<blog>
 
 The fictional enterprise Liberty had a $100M+ project promising humanity “true freedom.” But a single misconfiguration in its file shares opened the door to an attack chain that progressed from RedLine Stealer credential theft, to a phishing page capturing a Net-NTLM hash, to RDP access and, ultimately, a persistent backdoor. Across 20 questions in this retired Hack The Box blue-team capture-the-flag challenge, I reconstructed the attack using the provided Windows triage image and my blue team toolset.
 
@@ -211,6 +211,8 @@ Q20: What is the name of shared folder that was created by the threat actor duri
 
 Answer: `ProjectArk`
 
-
+For the final answer, I looked back at the network share list from question 3. There is only one other user created share and I chose that as the answer. 
 
 [CONCLUSION]
+
+<\blog>
