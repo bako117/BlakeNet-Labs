@@ -71,3 +71,47 @@ Q3: There is a shared folder that can be accessed by all users, what is the name
 
 Answer: `Proposal`
 
+Q4: The threat actor uploaded several files to the previously identified shared folder. One of these files can be used to capture the hash of a user who opens it. What is the name of that file? 
+
+Answer: `Proposal.url`
+
+Q5: What is the full URL used by threat actor to mimic the fake proposal of the project?
+
+Answer: `http://argonaut.ark/proposal.html`
+
+Q6: What is the full UNC path of the network share that the threat actor used to capture hash of the victim? Answer: `\\192.168.189.129\%USERNAME%.icon`
+
+Q7: What is the format of the hash that the threat actor captured via this method? Answer: `Net-NTLMv2`
+
+Q8: What is the full name of the second compromised user? Answer: `Kuneo Texus`
+
+Q9: When was the time that the threat actor connected to the server via RDP in UTC? Answer: `2025-06-11 14:44:48`
+
+Q10: The threat actor discovered a folder that stores files about the project, What is the full path of this folder? Answer: `C:\ProjectArk`
+
+Q11: The threat actor created an archive file containing all files of the previously identified folder, What is the name of this archive file? Answer: `arkproj.zip`
+
+Q12: What is the total bytes of all files on that folder which were compressed into previously identified archive file? (not including Zone Identifier) Answer: `783907`
+
+Q13: The threat actor uploaded the previously identified file to C2 website, What is the domain of this website? 
+
+Answer: `yourc2filemanager.cn`
+
+Q14: While reviewing users on this server, you found a suspicious user on this server, What is the name of this user? 
+
+Answer: `t.minami`
+
+Q15: The threat actor installed a web-based gateway as a backdoor to the server. What is the full command used to install this feature? 
+
+Answer: `Install-WindowsFeature -Name WindowsPowerShellWebAccess -IncludeManagementTools`
+
+Q16: Which protocol has to be enabled to use this feature? Answer: `WinRM`
+
+Q17: Provide the UTC timestamp when the threat actor confirmed successful backdoor access through the previously identified user account. Answer: `2025-06-11 14:54:55`
+
+Q18: What is the Session ID of this connection? Answer: `LIBERYSV08\t.minami.250611.075455`
+
+Q19: Provide the UTC timestamp When was this session terminated by the threat actor Answer: `2025-06-11 14:55:40`
+
+Q20: What is the name of shared folder that was created by the threat actor during the invasion? Answer: `ProjectArk`
+
